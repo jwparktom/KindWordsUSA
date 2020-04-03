@@ -5,11 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production webpack -p",
+    "build": "NODE_ENV=production webpack -p && echo \"Webpack Built\" && exit 0",
     "build:dev": "webpack",
-    "bs-init": "browser-sync init",
-    "bs": "gulp bs",
-    "scss": "sass --watch ./public/lib/scss/:./public/lib/style/",
     "watch": "gulp watch"
   },
   "dependencies": {

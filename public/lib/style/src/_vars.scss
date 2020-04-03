@@ -1,0 +1,18 @@
+
+// screen sizes
+$screen-m: 1024px;
+
+// border radii
+$bdr1: 6px;
+$bdr2: 8px;
+
+// colors
+$red1: #c93728;
+
+// transitions
+$gts: cubic-bezier(0.6, 0.1, 0.3, 0.8);
+
+// extensions // use @extend %name
+%bgimg{background-repeat:no-repeat;background-position:center center;background-size:cover;}
+%shadow-1{box-shadow:0 0 20px 1px rgba(130, 130, 130, 0.15);}
+%shadow-1-hov{box-shadow:0 0 30px 1px rgba(80, 80, 80, 0.3);}

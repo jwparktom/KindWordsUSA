@@ -20,15 +20,16 @@ function sassWatch(){
   watch('public/lib/style/src/*.scss', sassBundle);
 }
 
-function bsInit(){
+function bsWatch(){
   browserSync.init({
-    proxy: 'http://localhost/website/KindWordsUSA/public/',
+    server: {
+      baseDir: './public/',
+    },
     files: [
       'public/**/*.*',
-      // '!**/src/*.*', '!**/src/**/*.*',
     ],
     open: false,
   });
 }
 
-exports.watch = parallel(bsInit, sassWatch);
+exports.watch = parallel(bsWatch, sassWatch);
