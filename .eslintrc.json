@@ -1,0 +1,48 @@
+{
+  "extends": "google",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "max-len": ["off", 150],
+    "quotes": ["error", "single", {
+      "avoidEscape": true
+    }],
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "linebreak-style": ["error", "unix"],
+    "one-var": ["off", "consecutive"],
+    "space-before-blocks": ["error", "never"],
+    "space-before-function-paren": ["error", "never"],
+
+    "arrow-parens": ["error", "as-needed"],
+    "brace-style": ["error", "1tbs", {
+      "allowSingleLine": true
+    }],
+    "new-cap": ["error", {
+      "capIsNew": false
+    }],
+
+    "valid-jsdoc": ["error", {
+      "requireReturn": false,
+      "requireReturnType": false,
+      "requireParamDescription": false,
+      "requireReturnDescription": false
+    }],
+    "require-jsdoc": ["error", {
+        "require": {
+            "FunctionDeclaration": false,
+            "MethodDefinition": false,
+            "ClassDeclaration": false,
+            "ArrowFunctionExpression": false
+        }
+    }]
+  }
+}

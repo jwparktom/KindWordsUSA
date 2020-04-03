@@ -1,0 +1,7 @@
+# https://htaccess.madewithlove.be/
+#Options +FollowSymLinks -MultiViews
+# https://www.codingcage.com/2015/11/how-to-remove-php-html-extensions-with.html
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
