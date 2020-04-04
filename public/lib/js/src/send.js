@@ -35,20 +35,22 @@ document.getElementById('send-btn').addEventListener('click', function(){
   };
 
   const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = () => {
+  xhr.onload = () => {
     isSending = false;
-    if (xhr.readyState == 4){
-      console.log(xhr.responseText);
-      if (xhr.status >= 200 && xhr.status < 300){
-        // success
-        console.log(xhr.responseText);
-        document.getElementById('send-sent').classList.add('show');
-      } else {
-        // failed
-        console.log('The request failed!');
-      }
+
+    const res = JSON.parse(xhr.responseText) || null;
+
+    console.log(xhr.responseText);
+    console.log(xhr.status);
+    if ((res && res.success) || (xhr.status >= 200 && xhr.status < 300)){
+      // success
+      document.getElementById('send-sent').classList.add('show');
+    } else {
+      // failed
+      console.log('The request failed!');
     }
   };
-  xhr.open('GET', sendURL);
-  xhr.send(body);
+  xhr.open('POST', sendURL);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.send(`msg=${body.msg}`);
 });

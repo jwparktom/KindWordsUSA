@@ -3,7 +3,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 module.exports = (req, res) => {
-  const {msg} = req.query;
+  const {msg} = req.body; // POST
 
   if (!msg || msg.trim() == '') return res.status(401).json({error: 'missing-parameters'});
 
