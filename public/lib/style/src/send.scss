@@ -35,7 +35,7 @@
     }
     &-btn span{
       @extend %shadow-1;
-      display:inline-block;padding:6px 12px;color:#fff;background-color:$red1;border-radius:$bdr1;font-size:18px;font-weight:700;
+      display:block;padding:6px 12px;color:#fff;background-color:$red1;border-radius:$bdr1;font-size:18px;font-weight:700;cursor:pointer;
       @media (min-width: $screen-m){font-size:22px;}
       &:hover,&:active{@extend %shadow-1-hov;}
     }
