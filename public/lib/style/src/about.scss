@@ -1,0 +1,61 @@
+@import '_vars';
+
+/*
+    about
+*/
+.about{
+  &-section{
+    padding:20px 0;
+    &.short{max-width:800px;margin:0 auto;}
+    &-title{font-size:20px;font-weight:700;text-align:center;}
+    &-content{
+      margin-top:10px;padding:5px 30px;background-color:#f9f9f9;border:1px solid #f4f5f7;border-radius:$bdr1;
+      & p{line-height:1.4;}
+    }
+  }
+}
+
+/*
+    about members
+*/
+.member{
+  padding:20px 0;
+  &.right{
+    &::before,&::after{content:'\0020';display:table;clear:both;}
+  }
+  &s{
+    padding:30px 0;font-size:0;
+    @media (min-width: $screen-m){text-align:left;}
+  }
+  &-img,&-content{display:inline-block;vertical-align:top;}
+  &-img{
+    width:100%;padding-bottom:25px;
+    @media (min-width: $screen-m){width:auto;padding-bottom:0;}
+    & div{
+      @extend %bgimg, %shadow-1;
+      height:140px;width:140px;margin:0 auto;border-radius:50%;
+    }
+  }
+  &.right &-img{float:right;}
+  &-content{
+    padding-left:0;
+    @media (min-width: $screen-m){width:calc(100% - 140px);padding-left:50px;}
+  }
+  &.right &-content{
+    @media (min-width: $screen-m){padding-left:0;padding-right:50px;}
+  }
+  // content
+  &-header{
+    padding-bottom:12px;text-align:center;
+    @media (min-width: $screen-m){text-align:left;}
+  }
+  &-name,&-role{display:inline-block;font-size:20px;}
+  &-name{padding-right:10px;font-weight:700;}
+  &.right &-header{
+    @media (min-width: $screen-m){text-align:right;}
+  }
+  &-bio{
+    font-size:15px;text-align:justify;
+    & p{margin-top:0;line-height:1.4;}
+  }
+}

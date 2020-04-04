@@ -6,12 +6,18 @@ const
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const IS_DEV = NODE_ENV === 'development';
 
+const API_SEND = {
+  production: JSON.stringify('https://kindwordsusa.com/api/msg/send'),
+  development: JSON.stringify('http://localhost:3000/api/msg/send'),
+};
+
 module.exports = {
   mode: NODE_ENV,
 
   entry: {
     'universal': `${lib}js/src/universal.js`,
     'home': `${lib}js/src/home.js`,
+    'send': `${lib}js/src/send.js`,
   },
 
   devtool: 'inline-source-map',
@@ -62,5 +68,9 @@ module.exports = {
     ],
   },
 
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.API_SEND': API_SEND[NODE_ENV],
+    }),
+  ],
 };

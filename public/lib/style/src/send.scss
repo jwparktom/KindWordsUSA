@@ -1,0 +1,61 @@
+@import '_vars';
+
+/*
+    send
+*/
+.send{
+  &-form,&-alt{max-width:800px;margin:0 auto;}
+  &-form{
+    padding:10px 0 30px;
+    &-row{display:flex;flex-wrap:wrap;padding:10px 0;}
+    &-actions{text-align:right;}
+    &-item{display:inline-block;vertical-align:middle;}
+    &-name,&-val{flex:1;}
+    &-name{
+      max-width:120px;padding-bottom:5px;font-weight:700;
+      @media (min-width: $screen-m){padding-top:4px;padding-bottom:0;}
+    }
+    &-val{
+      min-width:100%;
+      @media (min-width: $screen-m){min-width:auto;}
+      & input,& textarea{
+        width:100%;background-color:#fbfcfd;border:1px solid #ddd;border-radius:$bdr1;
+        &:focus,&:hover,&:active{@extend %shadow-1;}
+        &:focus{outline:none;border-color:#aaa;}
+      }
+      & input{
+        padding:5px 8px;
+        @media (min-width: $screen-m){max-width:300px;}
+      }
+      & textarea{height:300px;padding:8px;white-space:pre-wrap;resize:none;overflow-y:scroll;}
+    }
+    &-opt{
+      margin-right:20px;font-size:18px;
+      & label{cursor:pointer;}
+    }
+    &-btn span{
+      @extend %shadow-1;
+      display:inline-block;padding:6px 12px;color:#fff;background-color:$red1;border-radius:$bdr1;font-size:18px;font-weight:700;
+      @media (min-width: $screen-m){font-size:22px;}
+      &:hover,&:active{@extend %shadow-1-hov;}
+    }
+  }
+  &-missing,&-sent{
+    display:none;padding-top:10px;font-size:16px;text-align:center;
+    &.show{display:block;}
+  }
+  &-missing{color:$red1;}
+  &-sent{color:#88a272;}
+  &-alt{
+    padding:30px 0;border-top:1px solid #ddd;text-align:center;
+    @media (min-width: $screen-m){padding:40px 0;}
+    &-title{padding-bottom:10px;font-size:20px;font-weight:700;}
+    &-desc{
+      font-size:18px;
+      & a{
+        border-bottom:1px dashed $red1;
+        &:hover,&:active{border-bottom-style:solid;}
+      }
+    }
+  }
+}

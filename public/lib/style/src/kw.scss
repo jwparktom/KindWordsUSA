@@ -32,7 +32,7 @@
   }
   // right
   &-menu{
-    display:none;position:fixed;top:0;bottom:0;left:0;right:0;padding-top:100px;background-color:rgba(255, 255, 255, 0.5);z-index:10000;
+    display:none;position:fixed;top:0;bottom:0;left:0;right:0;padding-top:100px;background-color:rgba(255, 255, 255, 0.8);z-index:10000;
     @media (min-width: $screen-m){display:block;position:relative;padding-top:0;background-color:none;}
     &.open{display:block;}
     &-trigger{
@@ -43,6 +43,7 @@
     & li{
       display:block;margin:20px 0;font-size:24px;text-align:center;
       @media (min-width: $screen-m){display:inline-block;margin:0;font-size:18px;text-align:left;}
+      &.active a{color:$red1;}
     }
     & a{
       padding:8px 15px;color:#555;border:1px solid transparent;transition-duration:100ms;

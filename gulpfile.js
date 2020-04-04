@@ -24,6 +24,9 @@ function bsWatch(){
   browserSync.init({
     server: {
       baseDir: './public/',
+      serveStaticOptions: {
+        extensions: ['html'],
+      },
     },
     files: [
       'public/**/*.*',

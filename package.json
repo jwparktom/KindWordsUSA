@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack -p && echo \"Webpack Built\" && exit 0",
     "build:dev": "webpack",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "api": "node -r dotenv/config ./api/msg/send.js dotenv_config_path=.env"
   },
   "dependencies": {
-    "@signalwire/node": "^2.2.0",
+    "@sendgrid/mail": "^7.0.0",
     "aws-sdk": "^2.635.0",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0"
